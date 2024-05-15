@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.4.5](https://github.com/cuspuk/workflow_reads/compare/v3.4.4...v3.4.5) (2024-05-15)
+
+
+### Bug Fixes
+
+* fixes about repo transfer to cuspuk ([79bc2e5](https://github.com/cuspuk/workflow_reads/commit/79bc2e5c748726afdba04ea4d9ac5c91ffd75bbe))
+
 ## [3.4.4](https://github.com/xsitarcik/reads/compare/v3.4.3...v3.4.4) (2024-05-10)
 
 
