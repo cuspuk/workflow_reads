@@ -1,20 +1,16 @@
 # Snakemake workflow: `reads`
 
 [![Snakemake](https://img.shields.io/badge/snakemake-≥7.25.0-brightgreen.svg)](https://snakemake.github.io)
-[![Tests](https://github.com/xsitarcik/reads/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/xsitarcik/reads/actions?query=branch%3Amain+workflow%3ATests)
+[![Tests](https://github.com/cuspuk/workflow_reads/actions/workflows/main.yml/badge.svg?branch=main)](https://github.com/cuspuk/workflow_reads/actions?query=branch%3Amain+workflow%3ATests)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white)](https://conventionalcommits.org)
 
 A Snakemake workflow for `reads`
 
 ## Installing and running
 
-To install the workflow, simply git clone the repository into the path you want:
+To install the workflow, simply git clone the repository.
 
-```bash
-git clone git@github.com:xsitarcik/reads.git
-```
-
-Install the following conda environment:
+Then install the following conda environment:
 
 ```bash
 mamba create -c conda-forge -c bioconda --name snakemake_reads python=3.11 snakemake=7.25 peppy snakemake-wrapper-utils

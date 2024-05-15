@@ -11,4 +11,4 @@ rule seqtk__subsample_reads_pe:
     log:
         "logs/seqtk/subsample_reads_pe/{sample}.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers/raw/v1.13.4/wrappers/seqtk/subsample_paired"
+        "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.4/wrappers/seqtk/subsample_paired"

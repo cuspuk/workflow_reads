@@ -19,4 +19,4 @@ rule fastqc__quality_report:
     log:
         "logs/fastqc/{step}/{sample}_{pair}.log",
     wrapper:
-        "https://github.com/xsitarcik/wrappers/raw/v1.13.4/wrappers/fastqc/quality"
+        "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.4/wrappers/fastqc/quality"

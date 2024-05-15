@@ -8,6 +8,9 @@ run_modules:
   - cutadapt
   - kraken
 
+kraken:
+  top_n: 10
+
 module_order:
   - fastqc:
       name: "FastQC - original"
