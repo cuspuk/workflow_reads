@@ -13,7 +13,7 @@ To install the workflow, simply git clone the repository.
 Then install the following conda environment:
 
 ```bash
-mamba create -c conda-forge -c bioconda --name snakemake_reads python=3.11 snakemake=7.25 peppy snakemake-wrapper-utils
+mamba create -c conda-forge -c bioconda --name snakemake_v7_25 python=3.11 snakemake=7.25 peppy snakemake-wrapper-utils
 ```
 
 **IMPORTANT**: change the directory to the cloned repository - workflow directory. Every relative path mentioned is relative to this directory.
