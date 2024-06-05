@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.5.0](https://github.com/cuspuk/workflow_reads/compare/v3.4.5...v3.5.0) (2024-06-05)
+
+
+### Features
+
+* added option for include/exclude logic in decontamination ([0afba49](https://github.com/cuspuk/workflow_reads/commit/0afba49c746c22686cacdb51d58139332e2623c0))
+
 ## [3.4.5](https://github.com/cuspuk/workflow_reads/compare/v3.4.4...v3.4.5) (2024-05-15)
 
 
