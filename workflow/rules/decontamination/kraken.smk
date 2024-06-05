@@ -49,7 +49,7 @@ rule kraken__decontaminate:
     params:
         taxid=" ".join(str(taxa_id) for taxa_id in config["reads__decontamination__kraken"]["taxa_ids"]),
         extra=get_kraken_decontamination_params(),
-        exclude=config["reads__decontamination__kraken"]["filter_mode", True],  # true or false
+        exclude=config["reads__decontamination__kraken"]["filter_mode"],  # true or false
     log:
         "logs/kraken/decontaminate/{sample}.log",
     wrapper:
