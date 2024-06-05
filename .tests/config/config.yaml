@@ -36,10 +36,11 @@ reads__trimming__cutadapt:
 reads__decontamination__kraken:
   kraken_dir: "path_to_kraken/k2_viral_20230314" # Directory containing kraken DB files. If does not exist, will be downloaded using the dirname.
   # get KRAKEN_TAG from https://benlangmead.github.io/aws-indexes/k2
-  exclude_taxa_ids: # list of taxonomy IDs to exclude.
+  taxa_ids: # list of taxonomy IDs to exclude.
     - 9606 # Homo Sapiens
-  exclude_children: false # Whether to exclude reads classified at more specific levels than specified taxonomy ID levels.
-  exclude_ancestors: false # Whether to exclude reads classified at all taxonomy levels between root and the specified taxonomy ID levels.
+  filter_mode: "exclude"
+  filter_children: false # Whether to exclude reads classified at more specific levels than specified taxonomy ID levels.
+  filter_ancestors: false # Whether to exclude reads classified at all taxonomy levels between root and the specified taxonomy ID levels.
   save_memory: true # If true, kraken limits RAM memory usage but sacrifices speed.
   generate_krona: false # If true, krona is generated from kraken report
   krona_dir: null #"path_to_krona/{TIMESTAMP}"

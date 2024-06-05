@@ -289,9 +289,9 @@ def get_cutadapt_extra_pe() -> str:
 
 def get_kraken_decontamination_params():
     extra = []
-    if config["reads__decontamination__kraken"]["exclude_children"]:
+    if config["reads__decontamination__kraken"]["filter_children"]:
         extra.append("--include-children")
-    if config["reads__decontamination__kraken"]["exclude_ancestors"]:
+    if config["reads__decontamination__kraken"]["filter_ancestors"]:
         extra.append("--include-parents")
     return " ".join(extra)
 
