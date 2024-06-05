@@ -186,21 +186,28 @@ definitions:
         description: "Directory with the kraken DB files. If does not exist, the workflow tries to download DB by using the basename. See https://benlangmead.github.io/aws-indexes/k2."
         pattern: '.*k2_.*_\d{8}\/?$'
         examples: ["/data/genome/metagenome/kraken/k2_pluspf_20240112"]
-      exclude_taxa_ids:
+      taxa_ids:
         type: array
-        description: "List of taxonomy IDs for excluding logic. Example: 9606 - Homo Sapiens of rank=species."
+        description: "List of taxonomy IDs for filter logic. Example: 9606 - Homo Sapiens of rank=species."
         minItems: 1
         items:
           type: integer
         default: [9606]
-      exclude_children:
+      filter_mode:
+        type: string
+        enum:
+          - "exclude"
+          - "include"
+        description: "Reads with specified taxa ids are either excluded or included."
+        default: true
+      filter_children:
         type: boolean
         default: false
-        description: "Whether to exclude reads classified at more specific levels than specified taxonomy ID levels."
-      exclude_ancestors:
+        description: "Whether to filter reads classified at more specific levels than specified taxonomy ID levels."
+      filter_ancestors:
         type: boolean
         default: false
-        description: "Whether to exclude reads classified at all taxonomy levels between root and the specified taxonomy ID levels."
+        description: "Whether to filter reads classified at all taxonomy levels between root and the specified taxonomy ID levels."
       save_memory:
         type: boolean
         description: "If true, kraken limits RAM memory usage but sacrifices speed."
@@ -214,10 +221,11 @@ definitions:
         description: "Directory where krona dataset is located, or where will be downloaded."
         examples: ["/data/genome/taxonomy/krona/2023-12-03/"]
     required:
-      - exclude_taxa_ids
+      - taxa_ids
       - kraken_dir
-      - exclude_children
-      - exclude_ancestors
+      - filter_mode
+      - filter_children
+      - filter_ancestors
       - save_memory
       - generate_krona
       - krona_dir

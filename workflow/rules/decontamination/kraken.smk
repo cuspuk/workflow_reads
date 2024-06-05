@@ -47,12 +47,13 @@ rule kraken__decontaminate:
         temp_r2=temp("results/reads/decontamination/{sample}_R2.fastq"),
         std_out=temp("results/reads/decontamination/{sample}_decontamination.out"),
     params:
-        taxid=" ".join(str(taxa_id) for taxa_id in config["reads__decontamination__kraken"]["exclude_taxa_ids"]),
+        taxid=" ".join(str(taxa_id) for taxa_id in config["reads__decontamination__kraken"]["taxa_ids"]),
         extra=get_kraken_decontamination_params(),
+        exclude=config["reads__decontamination__kraken"]["filter_mode", True],  # true or false
     log:
         "logs/kraken/decontaminate/{sample}.log",
     wrapper:
-        "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.4/wrappers/kraken/decontaminate_pe"
+        "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.6/wrappers/kraken/decontaminate_pe"
 
 
 rule krona__update_taxonomy:

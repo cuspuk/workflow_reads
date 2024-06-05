@@ -43,9 +43,10 @@ reads__trimming__cutadapt: # Relevant only if reads->trimming is set to cutadapt
 
 reads__decontamination__kraken: # Relevant only if reads->decontamination is set to kraken.
   kraken_dir: "/data/genome/metagenome/kraken/k2_pluspf_20240112" # str: Directory with the kraken DB files. If does not exist, the workflow tries to download DB by using the basename. See https://benlangmead.github.io/aws-indexes/k2.
-  exclude_taxa_ids: [9606] # list of min 1 int([9606]): List of taxonomy IDs for excluding logic. Example: 9606 - Homo Sapiens of rank=species.
-  exclude_children: false # bool(false): Whether to exclude reads classified at more specific levels than specified taxonomy ID levels.
-  exclude_ancestors: false # bool(false): Whether to exclude reads classified at all taxonomy levels between root and the specified taxonomy ID levels.
+  taxa_ids: [9606] # list of min 1 int([9606]): List of taxonomy IDs for filter logic. Example: 9606 - Homo Sapiens of rank=species.
+  filter_mode: "exclude" # enum(exclude): Reads with specified taxa ids are either excluded or included. Allowed: 'include','exclude'.
+  filter_children: false # bool(false): Filter reads classified at more specific levels than specified taxonomy ID levels.
+  filter_ancestors: false # bool(false): Filter reads classified at all taxonomy levels between root and the specified taxonomy ID levels.
   save_memory: true # bool(true): If true, kraken limits RAM memory usage but sacrifices speed.
   generate_krona: false # bool(false): If true, krona is generated from kraken report.
   krona_dir: "/data/genome/taxonomy/krona/2023-12-03/" # null/str: Directory where krona dataset is located, or where will be downloaded.
