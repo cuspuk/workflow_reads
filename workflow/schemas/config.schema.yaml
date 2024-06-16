@@ -476,6 +476,7 @@ definitions:
         description: "Decontamination method, if not set, decontamination will not be performed."
         enum:
           - "kraken"
+          - "bwa"
           - null
         default: null
         examples: ["kraken"]
