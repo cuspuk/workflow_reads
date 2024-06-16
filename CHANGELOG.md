@@ -1,5 +1,17 @@
 # Changelog
 
+## [3.6.0](https://github.com/cuspuk/workflow_reads/compare/v3.5.2...v3.6.0) (2024-06-16)
+
+
+### Features
+
+* added bwa for decontamination ([2322a1c](https://github.com/cuspuk/workflow_reads/commit/2322a1cf8f8ef04f7f2021e5cb6cc530e6f3fe04))
+
+
+### Performance Improvements
+
+* bumped wrappers ([0b5dc36](https://github.com/cuspuk/workflow_reads/commit/0b5dc36ac28b952cbe5fa231bc829c3156b87306))
+
 ## [3.5.2](https://github.com/cuspuk/workflow_reads/compare/v3.5.1...v3.5.2) (2024-06-15)
 
 
