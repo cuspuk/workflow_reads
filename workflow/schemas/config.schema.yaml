@@ -54,6 +54,22 @@ definitions:
           properties:
             reads:
               properties:
+                decontamination:
+                  type: string
+                  const: "bwa"
+        then:
+          properties:
+            reads__decontamination__bwa:
+              type: object
+              "$ref": "#/definitions/ReadsDecontaminationBwa"
+              description: "Relevant only if reads->decontamination is set to bwa."
+          required:
+            - reads__decontamination__bwa
+          message: "reads__decontamination__bwa is required if reads->decontamination is set to bwa."
+      - if:
+          properties:
+            reads:
+              properties:
                 trimming:
                   type: string
                   const: "cutadapt"
@@ -199,7 +215,7 @@ definitions:
           - "exclude"
           - "include"
         description: "Reads with specified taxa ids are either excluded or included."
-        default: true
+        default: "exclude"
       filter_children:
         type: boolean
         default: false
@@ -229,7 +245,7 @@ definitions:
       - save_memory
       - generate_krona
       - krona_dir
-    title: ReadsDecontamination
+    title: ReadsDecontaminationKraken
     if:
       properties:
         generate_krona:
@@ -240,6 +256,29 @@ definitions:
           type: string
           pattern: '.*/\d{4}-\d{2}-\d{2}\/?$'
       message: "reads__decontamination__kraken->krona_dir must be valid if generate_krona is True."
+  ReadsDecontaminationBwa:
+    type: object
+    additionalProperties: false
+    properties:
+      references:
+        type: array
+        description: "List of reference fasta files."
+        minItems: 1
+        items:
+          type: string
+          pattern: '.*\.fa'
+        default: ["/data/genome/human/grch38/grch38.fa"]
+      filter_mode:
+        type: string
+        enum:
+          - "exclude"
+          - "include"
+        description: "Mapped reads are either excluded or included."
+        default: "exclude"
+    required:
+      - references
+      - filter_mode
+    title: ReadsDecontaminationBwa
   ReadsTrimmingCutadapt:
     type: object
     additionalProperties: false
