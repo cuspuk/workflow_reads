@@ -24,7 +24,7 @@ rule bwa__filter_reads:
         keep_param="-F 2" if config["reads__decontamination__bwa"]["filter_mode"] == "exclude" else "-f 2",
     threads: min(config["threads"]["reads__decontamination"], config["max_threads"])
     log:
-        "logs/decontamination/bwa__filter_reads.log",
+        "logs/decontamination/bwa__filter_reads/{sample}.log",
     wrapper:
         "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.4/wrappers/bwa/filter"
 
