@@ -22,7 +22,7 @@ rule bwa__filter_reads:
     params:
         indices=lambda w, input: [os.path.splitext(i)[0] for i in input.index],
         keep_param="-F 2" if config["reads__decontamination__bwa"]["filter_mode"] == "exclude" else "-f 2",
-        fastq_param="-t -n -i",
+        fastq_param="-t -n",
     threads: min(config["threads"]["reads__decontamination"], config["max_threads"])
     log:
         "logs/decontamination/bwa__filter_reads/{sample}.log",
