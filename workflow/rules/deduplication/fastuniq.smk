@@ -11,4 +11,4 @@ rule fastuniq__deduplicate_reads:
     log:
         "logs/fastuniq/{sample}.log",
     wrapper:
-        "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.4/wrappers/fastuniq/paired"
+        "https://github.com/cuspuk/workflow_wrappers/raw/v1.14.0/wrappers/fastuniq/paired"

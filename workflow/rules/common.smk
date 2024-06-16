@@ -186,7 +186,7 @@ def get_bwa_indexes():
     indexes = []
     for ref in refs:
         ref_name = os.path.splitext(os.path.basename(ref))[0]
-        indexes.append(os.path.join(os.path.dirname(ref), f"{ref_name}.bwt"))
+        indexes.append(os.path.join(os.path.dirname(ref), "bwa_index", f"{ref_name}.bwt"))
     return indexes
 
 
