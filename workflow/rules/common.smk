@@ -185,7 +185,7 @@ def get_bwa_indexes():
     refs = config["reads__decontamination__bwa"]["references"]
     indexes = []
     for ref in refs:
-        ref_name = os.path.basename(ref).splitext()[0]
+        ref_name = os.path.splitext(os.path.basename(ref))[0]
         indexes.append(os.path.join(os.path.dirname(ref), f"{ref_name}.bwt"))
     return indexes
 
