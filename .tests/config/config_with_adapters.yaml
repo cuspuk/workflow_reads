@@ -1,7 +1,7 @@
 reads: # Specify the order and methods for each read processing step. If no method is specified, the step will not be performed.
   subsampling: null
   trimming: "cutadapt" # OPT - specify method of trimming. Allowed: "cutadapt", "null".
-  decontamination: null # OPT - specify method of decontamination. Allowed: "kraken", "null".
+  decontamination: "bwa" # OPT - specify method of decontamination. Allowed: "kraken", "null".
   deduplication: null
   _generate_fastqc_for: ["trimming"] # OPT - specify which steps to generate fastqc for. Allowed: "original"."subsampling", "trimming", "decontamination", "deduplication" or empty list (default: empty list).
 
@@ -42,6 +42,11 @@ reads__trimming__cutadapt: # Required only if "trimming" in main "flow" element.
   max_length_r2: null # OPT - maximum R2 read length. If R2 read is longer, both R1 and R2 reads are discarded. The fourth step.
   max_n_bases: null # OPT - Discard read if R1 or R2 has more than the specified number of N bases. The fifth step.
   max_expected_errors: null # OPT - Discard read if R1 or R2 has more expected errors than this.
+
+reads__decontamination__bwa: # Relevant only if reads->decontamination is set to bwa.
+  references: # list of min 1 str: List of reference fasta files.
+    - "test_data/test_ref.fa"
+  filter_mode: "exclude" # enum(exclude): Mapped reads are either excluded or included. Allowed: 'include','exclude'.
 
 ### RESOURCES #############################
 

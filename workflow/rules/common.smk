@@ -181,6 +181,15 @@ def infer_fastqs_for_subsampling(wildcards):
 ### Rule-granularity stuff ############################################################################################
 
 
+def get_bwa_indexes():
+    refs = config["reads__decontamination__bwa"]["references"]
+    indexes = []
+    for ref in refs:
+        ref_name = os.path.splitext(os.path.basename(ref))[0]
+        indexes.append(os.path.join(os.path.dirname(ref), "bwa_index", f"{ref_name}.bwt"))
+    return indexes
+
+
 def parse_adapter_removal_params(adapter_config):
     args_lst = [
         f"--action {adapter_config['action']}",

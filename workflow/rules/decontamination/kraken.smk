@@ -53,7 +53,7 @@ rule kraken__decontaminate:
     log:
         "logs/kraken/decontaminate/{sample}.log",
     wrapper:
-        "https://github.com/cuspuk/workflow_wrappers/raw/v1.13.6/wrappers/kraken/decontaminate_pe"
+        "https://github.com/cuspuk/workflow_wrappers/raw/v1.14.0/wrappers/kraken/decontaminate_pe"
 
 
 rule krona__update_taxonomy:
