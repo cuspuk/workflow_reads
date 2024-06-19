@@ -8,6 +8,8 @@ rule bwa__build_index:
         approach="bwtsw",
     log:
         "{reference_dir}/bwa_index/logs/{fasta}.log",
+    wildcard_constraints:
+        fasta="|".join(get_decontaminations_refs()),
     wrapper:
         "https://github.com/cuspuk/workflow_wrappers/raw/v1.14.0/wrappers/bwa/index"
 
