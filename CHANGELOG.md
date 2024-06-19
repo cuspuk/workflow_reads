@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.1](https://github.com/cuspuk/workflow_reads/compare/v3.6.0...v3.6.1) (2024-06-19)
+
+
+### Bug Fixes
+
+* added wildcard constarints for bwa index ([cb56b2b](https://github.com/cuspuk/workflow_reads/commit/cb56b2b70d10ed82abd212e037e862fc57a95d0a))
+
 ## [3.6.0](https://github.com/cuspuk/workflow_reads/compare/v3.5.2...v3.6.0) (2024-06-16)
 
 
