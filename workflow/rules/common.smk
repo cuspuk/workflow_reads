@@ -181,6 +181,11 @@ def infer_fastqs_for_subsampling(wildcards):
 ### Rule-granularity stuff ############################################################################################
 
 
+def get_decontaminations_refs():
+    refs = config["reads__decontamination__bwa"]["references"]
+    return [os.path.splitext(os.path.basename(ref))[0] for ref in refs]
+
+
 def get_bwa_indexes():
     refs = config["reads__decontamination__bwa"]["references"]
     indexes = []
