@@ -15,4 +15,4 @@ rule multiqc__report:
     log:
         "logs/multiqc/all.log",
     wrapper:
-        "v3.12.1/bio/multiqc"
+        "v3.13.8/bio/multiqc"
