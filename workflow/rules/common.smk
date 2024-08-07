@@ -156,7 +156,7 @@ def temp_subsampling(output_file):
 def infer_fastq_path(wildcards):
     if wildcards.step != "original":
         return "results/reads/{step}/{sample}_{pair}.fastq.gz"
-    if "pair" not in wildcards or wildcards.pair == "R1":
+    if "pair" not in wildcards.keys() or wildcards.pair == "R1":
         return get_one_fastq_file(wildcards.sample, read_pair="fq1").iloc[0]
     elif wildcards.pair == "R2":
         return get_one_fastq_file(wildcards.sample, read_pair="fq2").iloc[0]
