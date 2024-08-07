@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.4](https://github.com/cuspuk/workflow_reads/compare/v3.6.3...v3.6.4) (2024-08-07)
+
+
+### Bug Fixes
+
+* fixed fastqc for original taking r1 for both ([94eadb7](https://github.com/cuspuk/workflow_reads/commit/94eadb7b36d8bc4bb28b72dcc8fe35dd286f7858))
+
 ## [3.6.3](https://github.com/cuspuk/workflow_reads/compare/v3.6.2...v3.6.3) (2024-08-03)
 
 
