@@ -13,4 +13,4 @@ rule cutadapt__trim_reads_pe:
     log:
         "logs/cutadapt/trim_reads_pe/{sample}.log",
     wrapper:
-        "v3.14.0/bio/cutadapt/pe"
+        "v4.0.0/bio/cutadapt/pe"
