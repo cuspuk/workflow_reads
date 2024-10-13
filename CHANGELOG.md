@@ -1,5 +1,12 @@
 # Changelog
 
+## [3.6.9](https://github.com/cuspuk/workflow_reads/compare/v3.6.8...v3.6.9) (2024-10-13)
+
+
+### Performance Improvements
+
+* autobump conda envs and/or wrappers ([5ad0bd7](https://github.com/cuspuk/workflow_reads/commit/5ad0bd7c944f36ee821124f832c7eedfb0314f5b))
+
 ## [3.6.8](https://github.com/cuspuk/workflow_reads/compare/v3.6.7...v3.6.8) (2024-09-21)
 
 
