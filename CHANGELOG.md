@@ -1,5 +1,19 @@
 # Changelog
 
+## [3.7.0](https://github.com/cuspuk/workflow_reads/compare/v3.6.9...v3.7.0) (2025-08-14)
+
+
+### Features
+
+* cutadapt with new params and bumped kraken2 ([4e1ddf8](https://github.com/cuspuk/workflow_reads/commit/4e1ddf8f1a8294e97bcd9aa594b67052714fec7c))
+* cutadapt with params for R2 length and max avg err rate ([bc33c90](https://github.com/cuspuk/workflow_reads/commit/bc33c908ea9360c442b09264fd32e274deaeb40a))
+
+
+### Performance Improvements
+
+* bumped kraken2 ([9ba24c1](https://github.com/cuspuk/workflow_reads/commit/9ba24c129d894ab02884607afb8d3907104eea5d))
+* bumped multiqc ([e8c91e9](https://github.com/cuspuk/workflow_reads/commit/e8c91e9be2a8d0ec33a650023500c6d494221c5e))
+
 ## [3.6.9](https://github.com/cuspuk/workflow_reads/compare/v3.6.8...v3.6.9) (2024-10-13)
 
 
