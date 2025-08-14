@@ -337,7 +337,12 @@ definitions:
         description: "Relevant only if do_adapter_removal is set to true."
       shorten_to_length:
         type: [integer, "null"]
-        description: "Shorten each read to the specified length. Corresponds to the cutadapt length parameter."
+        description: "Shorten each read to the specified length. Corresponds to the cutadapt length parameter. If 'shorten_to_length_r2' is specified, this value is applied to R1 reads only."
+        minimum: 0
+        default: null
+      shorten_to_length_r2:
+        type: [integer, "null"]
+        description: "Shorten each R2 read to the specified length. If not specified, 'shorten_to_length' is applied for R2 as well."
         minimum: 0
         default: null
       trim_N_bases_on_ends:
@@ -376,6 +381,12 @@ definitions:
         description: "Discard reads whose expected number of errors exceeds this value."
         minimum: 0
         default: null
+      max_average_error_rate:
+        type: [number, "null"]
+        description: "Discard reads whose average error rate exceeds this value. Between 0 and 1."
+        minimum: 0
+        maximum: 1
+        default: null
     required:
       - quality_cutoff_from_3_end_r1
       - quality_cutoff_from_5_end_r1
@@ -388,6 +399,7 @@ definitions:
       - cut_from_end_r1
       - cut_from_end_r2
       - shorten_to_length
+      - shorten_to_length_r2
       - trim_N_bases_on_ends
       - min_length_r1
       - min_length_r2
@@ -395,6 +407,7 @@ definitions:
       - max_length_r2
       - max_n_bases
       - max_expected_errors
+      - max_average_error_rate
     title: ReadsTrimmingCutadapt
     if:
       properties:
