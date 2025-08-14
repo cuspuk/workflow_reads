@@ -234,6 +234,8 @@ def get_cutadapt_extra(cutadapt_config) -> list[str]:
 
     if (value := cutadapt_config["shorten_to_length"]) is not None:
         args_lst.append(f"--length {value}")
+    if (value := cutadapt_config["shorten_to_length_r2"]) is not None:
+        args_lst.append(f"-L {value}")
     if (value := cutadapt_config["cut_from_start_r1"]) is not None:
         args_lst.append(f"--cut {value}")
     if (value := cutadapt_config["cut_from_start_r2"]) is not None:
@@ -247,6 +249,9 @@ def get_cutadapt_extra(cutadapt_config) -> list[str]:
         args_lst.append(f"--max-n {value}")
     if (value := cutadapt_config["max_expected_errors"]) is not None:
         args_lst.append(f"--max-expected-errors {value}")
+    if (value := cutadapt_config["max_average_error_rate"]) is not None:
+        args_lst.append(f"--max-average-error-rate {value}")
+
     if value := cutadapt_config["trim_N_bases_on_ends"]:
         args_lst.append(f"--trim-n")
     if cutadapt_config["nextseq_trimming_mode"]:

@@ -3,7 +3,7 @@ reads: # Specify the order and methods for each read processing step. If no meth
   trimming: "cutadapt" # OPT - specify method of trimming. Allowed: "cutadapt", "null".
   decontamination: "kraken" # OPT - specify method of decontamination. Allowed: "kraken", "null".
   deduplication: "fastuniq" # OPT - specify method of deduplication. Allowed: "fastuniq", "null".
-  _generate_fastqc_for: ["deduplication"] # OPT - specify which steps to generate fastqc for. Allowed: "original"."subsampling", "trimming", "decontamination", "deduplication" or empty list (default: empty list).
+  _generate_fastqc_for: ["original"] # OPT - specify which steps to generate fastqc for. Allowed: "original"."subsampling", "trimming", "decontamination", "deduplication" or empty list (default: empty list).
 
 ### HYPERPARAMETERS #############################
 
@@ -25,6 +25,7 @@ reads__trimming__cutadapt:
   nextseq_trimming_mode: false # Modify quality-trimming algorithm to expect two-color chemistry data (NextSeq). This masks G bases to zero quality for R1 3'. Thus, `quality_cutoff_from_3_end_r1` must be defined.
   do_adapter_removal: false
   shorten_to_length: 500 # OPT - both R1 and R2 are shortened to this length.
+  shorten_to_length_r2: 600 # null/int: Shorten each R2 read to the specified length. If not specified, 'shorten_to_length' is applied for R2 as well.s
   trim_N_bases_on_ends: true # OPT - trim flanking N's on both read ends.
   min_length_r1: 1 # OPT - minimum R1 read length. If R1 read is shorter, both R1 and R2 reads are discarded. The fourth step.
   min_length_r2: 1 # OPT - minimum R2 read length. If R2 read is shorter, both R1 and R2 reads are discarded. The fourth step.
@@ -32,6 +33,7 @@ reads__trimming__cutadapt:
   max_length_r2: 300 # OPT - maximum R2 read length. If R2 read is longer, both R1 and R2 reads are discarded. The fourth step.
   max_n_bases: 5 # OPT - Discard read if R1 or R2 has more than the specified number of N bases. The fifth step.
   max_expected_errors: 5 # OPT - Discard read if R1 or R2 has more expected errors than this.
+  max_average_error_rate: 0.9 # null/float: Discard reads whose average error rate exceeds this value. Between 0 and 1.
 
 reads__decontamination__kraken:
   kraken_dir: "path_to_kraken/k2_viral_20230314" # Directory containing kraken DB files. If does not exist, will be downloaded using the dirname.

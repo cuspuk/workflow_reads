@@ -12,7 +12,8 @@ rule multiqc__report:
         ),
     params:
         use_input_files_only=True,
+        extra="--verbose",
     log:
         "logs/multiqc/all.log",
     wrapper:
-        "v4.7.1/bio/multiqc"
+        "v7.2.0/bio/multiqc"
